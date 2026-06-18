@@ -34,4 +34,4 @@ with sync_playwright() as p:
     property_data['amenities'] = page.locator('section#amenities .styles_text__IlyiW').all_inner_texts()
     
     print(property_data)
-    page.wait_for_timeout(5000)
+    # page.wait_for_timeout(5000)
