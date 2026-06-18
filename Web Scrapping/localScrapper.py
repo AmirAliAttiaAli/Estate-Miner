@@ -116,9 +116,10 @@ async def scrape_page_link(page, page_num):
 async def scrape_property_details(context, url, semaphore):
     async with semaphore:
         page = await context.new_page()
+        target_url = url if url.startswith("http") else f"{BASE_URL}{url}"
         for attempt in range(1, MAX_RETRIES + 1):
             try:
-                await page.goto(f"{BASE_URL}{url}", wait_until="domcontentloaded", timeout=60000)
+                await page.goto(target_url, wait_until="domcontentloaded", timeout=60000)
                 await page.wait_for_timeout(5000)
                 property_data = {}
                 property_data['title'] = page.locator('h1.styles_desktop_title__j0uNx').inner_text()
