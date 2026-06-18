@@ -15,7 +15,7 @@ with sync_playwright() as p:
         "elements => elements.map(el => el.getAttribute('href'))"
     )
     # print(links)
-    page.goto(f"{links[0]}")
+    page.goto(f"{links[0]}", wait_until='domcontentloaded', timeout=60000)
     property_data = {}
     property_data['price'] = int(page.locator('[data-testid="property-price-value"]').inner_text(timeout=5000).replace(',', ''))
     property_data['bedrooms'] = int(page.locator('[data-testid="property-attributes-bedrooms"]').inner_text().split(" ")[0])
@@ -30,6 +30,8 @@ with sync_playwright() as p:
     property_data['property_type'] = page.locator('[data-testid="property-details-type"]').inner_text()
     property_data['available from'] = page.locator('[data-testid="property-details-rental-availability-date"]').inner_text()
     property_data['location'] = page.locator('#location p.styles-module_map__title__M2mBC').inner_text()
+    
+    property_data['amenities'] = page.locator('section#amenities .styles_text__IlyiW').all_inner_texts()
     
     print(property_data)
     page.wait_for_timeout(5000)
