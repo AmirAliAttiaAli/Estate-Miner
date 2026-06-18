@@ -1,0 +1,9 @@
+page_num = 5
+PROGRESS_FILE = "output/.progress.json"
+OUTPUT_DIR = "output"
+OUTPUT_FILE = "Properties.csv"
+MAX_RETRIES = 5
+RETRY_DELAY = 5
+TOTAL_PAGES = 5
+BATCH_SIZE = 20
+CONCURRENCY = 5
