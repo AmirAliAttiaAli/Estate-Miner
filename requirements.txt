@@ -1,0 +1,7 @@
+playwright
+requests
+python-dotenv
+numpy
+pandas
+matplotlib
+seaborn
