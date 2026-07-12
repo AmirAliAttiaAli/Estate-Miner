@@ -56,7 +56,7 @@ Estate-Miner is an end-to-end data mining project designed to collect, clean, pr
 | Properties | 919 |
 | Features | 45 |
 | Numerical Features | 34 |
-| Categorical Features | 10 |
+| Categorical Features | 11 |
 | Missing Values | 0 |
 | Duplicate Records | 0 |
 
