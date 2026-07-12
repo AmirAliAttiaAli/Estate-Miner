@@ -59,6 +59,58 @@ graph TD
 
 ---
 
+## 📊 Key Exploratory Insights & Visualizations
+
+Here are the key findings and visualizations extracted from our exploratory analysis:
+
+### 1. Target Variable (Price) Skewness & ML Transformation
+* **Visual**: `EDA_Outputs/price_distribution_analysis.png`
+* **Plot**:
+  ![Price Distribution Analysis](EDA_Outputs/price_distribution_analysis.png)
+* **Insights**: Property prices range from **3.3M to 900M EGP**, exhibiting an extreme right-skew. Training ML models on raw prices will cause poor convergence and skew weights. Applying a **logarithmic transformation** (`log1p(price)`) stabilizes the variance and shapes the target into a clean, near-normal bell curve.
+
+---
+
+### 2. Geographical Pricing Dynamics
+* **Visual**: `EDA_Outputs/regional_price_and_volume.png`
+* **Plot**:
+  ![Regional Price & Volume](EDA_Outputs/regional_price_and_volume.png)
+* **Insights**: 
+  - **Cairo** commands the highest average property prices (**~36.2M EGP**), driven by premium compound developments in New Cairo and the New Administrative Capital.
+  - **North Coast** holds the highest supply volume (**53%** of all active listings), highlighting the extensive resort and vacation-home market activity in Egypt.
+
+---
+
+### 3. Core Physical Drivers of Price
+* **Visual**: `EDA_Outputs/price_vs_physical_metrics.png`
+* **Plot**:
+  ![Price vs Physical Metrics](EDA_Outputs/price_vs_physical_metrics.png)
+* **Insights**: 
+  - Property size (**`area_sqm`**) is the single most dominant linear driver of real estate prices, with a massive **0.91** correlation coefficient.
+  - Capacity indicators (**bedrooms** and **bathrooms**) display moderate positive correlations with prices (~0.54 and ~0.51).
+
+---
+
+### 4. Amenities Market Valuation
+* **Visual**: `EDA_Outputs/amenity_frequency_and_price.png`
+* **Plot**:
+  ![Amenity Frequency & Price Impact](EDA_Outputs/amenity_frequency_and_price.png)
+* **Insights**:
+  - Basic amenities (such as a *Balcony* or *Covered Parking*) are standard market baselines across all pricing tiers.
+  - High-end additions like *Private Pools* and *Private Gardens* are structurally clustered in the premium luxury segment (Villas) and represent strong price premiums.
+
+---
+
+### 5. Correlation Heatmap & Feature Selection
+* **Visual**: `EDA_Outputs/correlation_matrix.png`
+* **Plot**:
+  ![Correlation Matrix](EDA_Outputs/correlation_matrix.png)
+* **Insights**:
+  - The correlation matrix highlights strong multicollinearity between size metrics (`area_sqm`) and capacity ratios (`area_per_bedroom`, `area_per_bathroom`).
+  - Engineered metrics containing the target variable (e.g., `price_per_bedroom` and `price_per_bathroom` showing ~0.95 correlation) represent **direct target leakage** and must be excluded from model training to prevent overfitting.
+
+---
+
 ## 📂 Project Structure
 
 ```bash
@@ -67,7 +119,7 @@ graph TD
 │   ├── cleaned_data.csv        # Cleaned listings
 │   └── preprocessed_data.csv   # Enriched listings with engineered features
 │
-├── EDA_Outputs/                # Visualizations saved from EDA runs
+├── EDA_Outputs/                # Visualizations & summary files saved from EDA runs
 │
 ├── Web Scrapping/              # Playwright scraper scripts & configurations
 │   ├── config.py
@@ -113,14 +165,9 @@ Run `Cleaning.ipynb`, `Preprocessing.ipynb`, and then `Real_Estate_EDA.ipynb` se
 
 We would like to acknowledge the hard work and contributions of the following team members who made this project possible:
 
-<!-- 
-👉 EDIT THIS SECTION: Replace the placeholders below with the names, roles, and details of the contributors who worked on the project.
--->
-
 * **[@AmirAliAttiaAli]**
-* **[@OmarCoder9]** 
+* **[@OmarCoder9]**
 * **[@Mohamed-Ramadan-Radwan]**
-
 
 ---
 
