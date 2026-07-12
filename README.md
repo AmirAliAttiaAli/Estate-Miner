@@ -249,9 +249,9 @@ Execute notebooks in the following order:
 
 # 👥 Contributors
 
-- Amir Ali Attia
-- Omar
-- Mohamed Ramadan Radwan
+- [@AmirAliAttiaAli](https://github.com/AmirAliAttiaAli)
+- [@OmarCoder9](https://github.com/OmarCoder9)
+- [@Mohamed-Ramadan-Radwan](https://github.com/Mohamed-Ramadan-Radwan)
 
 ---
 
