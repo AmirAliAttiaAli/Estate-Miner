@@ -114,6 +114,7 @@ D --> E[📊 Exploratory Data Analysis]
 
 - Pandas
 - NumPy
+- Scikit-Learn
 
 ---
 
@@ -121,12 +122,6 @@ D --> E[📊 Exploratory Data Analysis]
 
 - Matplotlib
 - Seaborn
-
----
-
-## Machine Learning Preparation
-
-- Scikit-Learn
 
 ---
 
