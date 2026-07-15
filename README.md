@@ -15,7 +15,7 @@
 
 <p align="center">
 
-**An end-to-end Data Engineering & Data Analytics pipeline for the Egyptian Real Estate Market.**
+**An end-to-end Data Analytics pipeline for the Egyptian Real Estate Market.**
 
 </p>
 
